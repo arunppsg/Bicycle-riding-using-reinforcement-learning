@@ -1,0 +1,32 @@
+State:
+
+The state of the bicycle consists of five components:
+
+	Angle of handle bars - theta
+	Angular velocity of handle bars - theta_dot
+	Angle to the bicycle to the verticle - omega
+	Angular velocity of the bicycle to the verticle - omega_dot
+	Angular acceleration of the angle from the bicycle to the verticle - omega_ddot
+
+Angular velocity is a measure of how fast the angle is changing. Angular acceleration is the rate of change of anugular velocity.
+
+Actions:
+
+	At the each time step, the agent chooses two actions:
+		What torque to apply to the handle bars?
+		By how to the displace the center of mass of the cycle.
+
+	How can those two actions guide the circle?
+		The torque in the handle bars tells the agent the direction which it has to rotate the handle bars - left, right or center.
+
+	By displacing the center of mass, we prevent ourselves from falling. Think of this like a verticle pole of height 200 cms. If the pole is falling left, by shifting the center of mass to the right, we can bring it straight back.
+
+
+Shaping:
+
+	One of the ideas used here is called as shaping. Shaping is used to give rewards for the partial correct actions. Shaping helps in sppeding up the learning process. We give small rewards for actions which result in a partially desired behaviour and more reward for correct actions which results in a good behaviour.
+
+References:
+    Physics Part
+        https://github.com/amarack/python-rl/blob/master/pyrl/environments/bicycle.py
+        Learning to drive a bicycle using reinforcement learning and shaping - Jette Randlov, Preben Alstrov
